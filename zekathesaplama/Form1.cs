@@ -24,26 +24,27 @@ namespace zekathesaplama
 
         private void button1_Click(object sender, EventArgs e)
         {
+            double euro;
             double dolarAltinGr;
-            double dolarmiktari;
             double ZekatMiktari;
             double TLAltinGr;
             double toplamMalMiktariAltinGr;
+            euro = Convert.ToDouble(textBox3.Text) / 53;
             TLAltinGr = Convert.ToDouble(textBox1.Text) / 975;
             dolarAltinGr = Convert.ToDouble(textBox2.Text) / 52;
-            toplamMalMiktariAltinGr = TLAltinGr + dolarAltinGr;
+            toplamMalMiktariAltinGr = TLAltinGr + dolarAltinGr + euro;
 
 
-            label2.Text=("zekat miktarı" + toplamMalMiktariAltinGr.ToString());
+
 
             if (toplamMalMiktariAltinGr >= 80.18)
             {
                 ZekatMiktari = (toplamMalMiktariAltinGr / 40) * 975;
-                label2.Text=("zekat miktarı" + ZekatMiktari.ToString());
+                label2.Text = (" Zekat miktarı= : " + ZekatMiktari.ToString() + "TL");
             }
             else
             {
-                label2.Text=("Zekat vermenize gerek yoktur.");
+                label2.Text=("Zekat vermenize gerek yoktur. ");
             }
         }
     }
